@@ -10,32 +10,33 @@ B = [c[2:] for c in coords]
 # y = 10
 y = 2000000
 
-if 0:
-    seen = set([])
-    for s,b in zip(S,B):
-        d = (abs(s[0]-b[0]) + abs(s[1]-b[1]))
+seen = set([])
+for s,b in zip(S,B):
+    d = (abs(s[0]-b[0]) + abs(s[1]-b[1]))
 
-        dsy = abs(s[1] - y)
+    dsy = abs(s[1] - y)
 
-        dx = (d - dsy)
-        if dx > 0:
-            # print(dx)
-            for xx in range(s[0]-dx, s[0]+dx):
-                seen.add(xx)
+    dx = (d - dsy)
+    if dx > 0:
+        # print(dx)
+        for xx in range(s[0]-dx, s[0]+dx):
+            seen.add(xx)
 
-    print(len(seen))
+print(len(seen))
 
 
 #
 # My idea is to walk one cell beyond the blocked diamond
 # from each sensor.
-# Visting each cell, check if ANY beacon can see it.
 #
+# Visting each cell, check if ANY beacon can see it.
 # Any cell that has NO beacons that see is the answer.
-# And conversely, the beacon MUST be one away from the blocked area.
+# And conversely, the beacon MUST be one away at least one blocked area.
 #
 # This will work, but takes a few minutes to run on my i7.
-# I guess there is a more efficient solution...
+# I think the *correct* solution involves transforming the diamonds to AABBs or
+# using line intersections. Didn't need to get to that though.
+#
 
 M = 4000000
 # M = 20
