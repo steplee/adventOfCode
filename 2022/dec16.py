@@ -93,7 +93,7 @@ print(max([s for (c,s,o) in threads]))
 
 # Part 2
 #
-# It is not pretty, but it does work...
+# It is not pretty...
 
 
 
