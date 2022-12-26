@@ -20,3 +20,9 @@ for l in lines:
 
 y = sum(sorted(arr)[-3:])
 print(y)
+
+lines = sum 
+or else 
+what if else
+or and
+print (most) if else 

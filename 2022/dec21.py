@@ -52,8 +52,7 @@ def dfs(curr, target):
         if op == '/': r = aa // target
         if op == '-': r = aa - target
 
-        ra = dfs(a, l)
-        if ra is not None:
+        if ra := dfs(a,l) is not None:
             return ra
         rb = dfs(b, r)
         if rb is not None:
